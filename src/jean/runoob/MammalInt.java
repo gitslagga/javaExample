@@ -1,17 +1,21 @@
 package jean.runoob;
 
-interface Animal1{
+interface Animal1 {
     public void eat();
+
     public void travel();
 }
+
 public class MammalInt implements Animal1 {
-    public void eat(){
+    public void eat() {
         System.out.println("Mammal eats");
     }
-    public void travel(){
+
+    public void travel() {
         System.out.println("Mammal travels");
     }
-    public int noOfLegs(){
+
+    public int noOfLegs() {
         return 0;
     }
 

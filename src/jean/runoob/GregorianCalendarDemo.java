@@ -22,7 +22,7 @@ public class GregorianCalendarDemo {
         System.out.println(gregorianCalendar.get(Calendar.MINUTE) + ":");
         System.out.println(gregorianCalendar.get(Calendar.SECOND));
 
-        if (gregorianCalendar.isLeapYear(year)){
+        if (gregorianCalendar.isLeapYear(year)) {
             System.out.println("当年是闰年");
         } else {
             System.out.println("当年不是闰年");

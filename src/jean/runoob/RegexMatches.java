@@ -18,7 +18,7 @@ public class RegexMatches {
         pattern = "(\\D*)(\\d+)(.*)";
         Pattern p = Pattern.compile(pattern);
         Matcher m = p.matcher(line);
-        if (m.find()){
+        if (m.find()) {
             System.out.println("Found value: " + m.group(0));
             System.out.println("Found value: " + m.group(1));
             System.out.println("Found value: " + m.group(2));
@@ -30,7 +30,7 @@ public class RegexMatches {
         p = Pattern.compile(REGEX);
         m = p.matcher(INPUT);
         int count = 0;
-        while (m.find()){
+        while (m.find()) {
             count++;
             System.out.println("Match number " + count);
             System.out.println("start(): " + m.start());
@@ -46,7 +46,7 @@ public class RegexMatches {
         Matcher m2 = p.matcher(input2);
         System.out.println("Current REGEX is: " + regex);
         System.out.println("Current INPUT is: " + input1);
-        System.out.println("Current INPUT2 is: "+ input2);
+        System.out.println("Current INPUT2 is: " + input2);
         System.out.println("lookingAt(): " + m1.lookingAt());
         System.out.println("matches(): " + m1.matches());
         System.out.println("lookingAt(): " + m2.lookingAt());
@@ -65,7 +65,7 @@ public class RegexMatches {
         p = Pattern.compile(regex);
         m = p.matcher(input1);
         StringBuffer stringBuffer = new StringBuffer();
-        while (m.find()){
+        while (m.find()) {
             m.appendReplacement(stringBuffer, input2);
         }
         m.appendTail(stringBuffer);

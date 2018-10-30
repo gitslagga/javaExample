@@ -5,25 +5,31 @@ class EncapTest {
     private String idNum;
     private int age;
 
-    public String getName(){
+    public String getName() {
         return name;
     }
-    public int getAge(){
+
+    public int getAge() {
         return age;
     }
-    public String getIdNum(){
+
+    public String getIdNum() {
         return idNum;
     }
-    public void setAge(int newAge){
+
+    public void setAge(int newAge) {
         age = newAge;
     }
-    public void setName(String newName){
+
+    public void setName(String newName) {
         name = newName;
     }
-    public void setIdNum(String newId){
+
+    public void setIdNum(String newId) {
         idNum = newId;
     }
 }
+
 public class RunEncap {
     public static void main(String[] args) {
         EncapTest encapTest = new EncapTest();

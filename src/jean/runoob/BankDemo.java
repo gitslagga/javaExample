@@ -11,38 +11,38 @@ public class BankDemo {
             c.withdraw(100.00);
             System.out.println("\nWithdrawing $600...");
             c.withdraw(600.00);
-        } catch (InsufficientFundsException e){
+        } catch (InsufficientFundsException e) {
             System.out.println("Sorry, but you short $" + e.getAmount());
             e.printStackTrace();
         }
     }
 }
 
-class InsufficientFundsException extends Exception
-{
+class InsufficientFundsException extends Exception {
     private double amount;
-    public InsufficientFundsException(double amount)
-    {
+
+    public InsufficientFundsException(double amount) {
         this.amount = amount;
     }
-    public double getAmount()
-    {
+
+    public double getAmount() {
         return amount;
     }
 }
 
-class CheckingAccount
-{
+class CheckingAccount {
     private double balance;
     private int number;
-    public CheckingAccount(int number){
+
+    public CheckingAccount(int number) {
         this.number = number;
     }
-    public void deposit(double amount){
+
+    public void deposit(double amount) {
         balance += amount;
     }
-    public void withdraw(double amount) throws InsufficientFundsException
-    {
+
+    public void withdraw(double amount) throws InsufficientFundsException {
         if (amount <= balance) {
             balance -= amount;
         } else {
@@ -50,10 +50,12 @@ class CheckingAccount
             throw new InsufficientFundsException(needs);
         }
     }
-    public double getBalance(){
+
+    public double getBalance() {
         return balance;
     }
-    public int getNumber(){
+
+    public int getNumber() {
         return number;
     }
 }

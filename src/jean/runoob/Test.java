@@ -1,46 +1,52 @@
 package jean.runoob;
 
 abstract class Animal {
-   abstract void eat();
+    abstract void eat();
 }
 
-class Cat extends Animal{
-    void eat(){
+class Cat extends Animal {
+    void eat() {
         System.out.println("Eat fish");
     }
-    void work(){
+
+    void work() {
         System.out.println("Catch mouse");
     }
 }
-class Dog extends Animal{
-    void eat(){
+
+class Dog extends Animal {
+    void eat() {
         System.out.println("Eat meat");
     }
-    void work(){
+
+    void work() {
         System.out.println("look home");
     }
 }
 
 public class Test {
-    public static void show(Animal a){
+    public static void show(Animal a) {
         a.eat();
-        if(a instanceof Cat){
+        if (a instanceof Cat) {
             ((Cat) a).work();
-        } else if (a instanceof Dog){
+        } else if (a instanceof Dog) {
             ((Dog) a).work();
         }
     }
 
-    public int test(){
+    public int test() {
         return 1;
     }
-    public void test(int a){
+
+    public void test(int a) {
         System.out.println("test2");
     }
-    public String test(int a, String s){
+
+    public String test(int a, String s) {
         return "returntest3";
     }
-    public String test(String s, int a){
+
+    public String test(String s, int a) {
         return "returntest4";
     }
 
@@ -72,55 +78,66 @@ class Employee {
     private String name;
     private String address;
     private int number;
+
     public Employee(String name, String address, int number) {
         System.out.println("Employee 构造函数");
         this.name = name;
         this.address = address;
         this.number = number;
     }
+
     public void mailCheck() {
         System.out.println("邮寄支票给： " + this.name
                 + " " + this.address);
     }
+
     public String toString() {
         return name + " " + address + " " + number;
     }
+
     public String getName() {
         return name;
     }
+
     public String getAddress() {
         return address;
     }
+
     public void setAddress(String newAddress) {
         address = newAddress;
     }
+
     public int getNumber() {
         return number;
     }
 }
 
-class Salary extends Employee
-{
+class Salary extends Employee {
     private double salary; // 全年工资
+
     public Salary(String name, String address, int number, double salary) {
         super(name, address, number);
         setSalary(salary);
     }
+
     public void mailCheck() {
         System.out.println("Salary 类的 mailCheck 方法 ");
         System.out.println("邮寄支票给：" + getName()
                 + " ，工资为：" + salary);
     }
+
     public double getSalary() {
         return salary;
     }
+
     public void setSalary(double newSalary) {
-        if(newSalary >= 0.0) {
+        if (newSalary >= 0.0) {
             salary = newSalary;
         }
     }
+
     public double computePay() {
         System.out.println("计算工资，付给：" + getName());
-        return salary/52;
+        return salary / 52;
     }
 }

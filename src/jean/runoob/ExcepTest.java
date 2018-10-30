@@ -3,9 +3,9 @@ package jean.runoob;
 public class ExcepTest {
     public static void main(String[] args) {
         int a[] = new int[2];
-        try{
+        try {
             System.out.println("Access element three: " + a[3]);
-        } catch (ArrayIndexOutOfBoundsException e){
+        } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Exception thrown : " + e);
         } finally {
             a[0] = 6;

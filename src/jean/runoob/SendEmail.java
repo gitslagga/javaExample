@@ -7,7 +7,7 @@ import javax.mail.internet.*;
 import javax.activation.*;
 
 public class SendEmail {
-    public static void sendEmail(){
+    public static void sendEmail() {
 
         String to = "chenshuaijunpp@126.com";
         String from = "957766762@qq.com";
@@ -17,7 +17,7 @@ public class SendEmail {
         properties.setProperty("mail.smtp.host", host);
         Session session = Session.getDefaultInstance(properties);
 
-        try{
+        try {
             MimeMessage message = new MimeMessage(session);
 
             message.setFrom(new InternetAddress(from));
@@ -34,7 +34,8 @@ public class SendEmail {
             e.printStackTrace();
         }
     }
-    public static void sendHtmlEmail(){
+
+    public static void sendHtmlEmail() {
         String to = "chenshuaijunpp@126.com";
         String from = "957766762@qq.com";
         String host = "localhost";
@@ -43,7 +44,7 @@ public class SendEmail {
         properties.setProperty("mail.smtp.host", host);
         Session session = Session.getDefaultInstance(properties);
 
-        try{
+        try {
             MimeMessage message = new MimeMessage(session);
             message.setFrom(new InternetAddress(from));
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
@@ -57,7 +58,8 @@ public class SendEmail {
             e.printStackTrace();
         }
     }
-    public static void sendFileEmail(){
+
+    public static void sendFileEmail() {
         String to = "chenshuaijunpp@126.com";
         String from = "957766762@qq.com";
         String host = "localhsot";
@@ -66,7 +68,7 @@ public class SendEmail {
         properties.setProperty("mail.smtp.host", host);
         Session session = Session.getDefaultInstance(properties);
 
-        try{
+        try {
             MimeMessage message = new MimeMessage(session);
             message.setFrom(new InternetAddress(from));
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
@@ -91,7 +93,8 @@ public class SendEmail {
             e.printStackTrace();
         }
     }
-    public static void sendMailQQ(){
+
+    public static void sendMailQQ() {
         String to = "chenshuaijunpp@126.com";
         String from = "957766762@qq.com";
         String host = "smtp.qq.com";
@@ -119,6 +122,7 @@ public class SendEmail {
             e.printStackTrace();
         }
     }
+
     public static void main(String[] args) {
 //        sendEmail();
 //        sendHtmlEmail();
