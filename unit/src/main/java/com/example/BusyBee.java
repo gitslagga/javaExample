@@ -6,7 +6,18 @@ public class BusyBee extends Object {
 	BusyBee() {
 		System.out.println("Busy Bee construct");
 	}
-
+	public static void tune(Instrument i) {
+		i.play(Note.middleC);
+	}
+	public static Shape randShape() {
+		switch((int)(Math.random() * 3)) {
+			default: //To quiet the compile
+				
+			case 0:	return new Circle();
+			case 1: return new Square();
+			case 2: return new Triangle();
+		}
+	}
 	public static void main(String[] args) {
 
 //		numberFormat();
@@ -26,7 +37,18 @@ public class BusyBee extends Object {
 //		BusyBee[] busyBee = new BusyBee[4];
 //		new BusyBee();
 
-		new ConcurrentWorker().work();
+//		new ConcurrentWorker().work();
+		
+//		Wind flute = new Wind();
+//		tune(flute);
+		
+		Shape[] s = new Shape[9];
+		// File up the array with shapes: 
+		for(int i = 0; i< s.length; i++) {
+			s[i] = randShape();
+			s[i].draw();
+			s[i].erase();
+		}
 	}
 
 	static void numberFormat() {
@@ -38,6 +60,58 @@ public class BusyBee extends Object {
 	}
 
 }
+
+class Shape {
+	void draw() {}
+	void erase() {}
+}
+
+class Circle extends Shape {
+	void draw () {
+		System.out.println("Circle.draw()");
+	}
+	void erase() {
+		System.out.println("Circle.erase");
+	}
+}
+
+class Square extends Shape {
+	void draw () {
+		System.out.println("Square.draw()");
+	}
+	void erase() {
+		System.out.println("Square.erase");
+	}
+}
+
+class Triangle extends Shape {
+	void draw () {
+		System.out.println("Triangle.draw()");
+	}
+	void erase() {
+		System.out.println("Triangle.erase");
+	}
+}
+
+class Note {
+	private int value;
+	private Note(int val) { value = val; }
+	public static final Note 
+	middleC = new Note(0),
+	cSharp = new Note(1),
+	cFlat = new Note(3);
+}
+class Instrument {
+	public void play(Note n) {
+		System.out.println("Instrument.play()");
+	}
+}
+class Wind extends Instrument {
+	public void play(Note n) {
+		System.out.println("Wind.play()");
+	}
+}
+
 
 class Worker {
 	public void work() {
