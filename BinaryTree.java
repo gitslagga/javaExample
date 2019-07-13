@@ -259,3 +259,22 @@ public class BinaryTree {
 		System.out.println(rst);
 	}
 }
+
+
+/**
+递归先序遍历：
+A B E I J F D G H 
+非递归先序遍历：
+A B E I J F D G H 
+递归中序遍历：
+I E J B F A G D H 
+非递归中序遍历：
+I E J B F A G D H 
+递归后序遍历：
+I J E F B G H D A 
+非递归后序遍历：
+I J E F B G H D A 
+广度优先遍历：
+A B D E F G H I J 
+深度优先遍历：
+[[A, B, E, I], [A, B, E, J], [A, B, F], [A, D, G], [A, D, H]]
